@@ -30,14 +30,14 @@ Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ort
 Jorge Luis Reyes-Ortiz, Alessandro Ghio, Xavier Parra-Llanas, Davide Anguita, Joan Cabestany, Andreu Català. Human Activity and Motion Disorder Recognition: Towards Smarter Interactive Cognitive Environments. 21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 
 ## Models Used
-## ROCKET and Arsenal
+### ROCKET and Arsenal
 The ROCKET (Random Convolutional Kernel Transform) and Arsenal models were implemented using the sktime library. ROCKET is a state-of-the-art method for time series classification that utilizes random convolutional kernels to generate a vast set of features from the input data. These features are subsequently used by a linear classifier, allowing for efficient and scalable classification with excellent accuracy. ROCKET's ability to transform raw sensor signals into meaningful features made it an ideal candidate for handling the complex time series data generated from the smartphone sensors.
 
 Arsenal builds upon the ROCKET framework by leveraging an ensemble of multiple ROCKET models. Each model in the Arsenal ensemble is trained with different random convolution kernels, leading to more robust and generalized predictions. This approach enhances classification performance by capturing a wider variety of patterns in the time series data. Arsenal was particularly effective in handling the variability between different participants and activities, ensuring higher accuracy in predicting human activity across the dataset.
 
 Both models were applied to the 561-feature vector derived from the accelerometer and gyroscope signals, using 70% of the data for training and 30% for testing. ROCKET and Arsenal were selected for their computational efficiency, making them well-suited for real-time applications on mobile devices.
 
-## Spiking Neural Networks (SNN)
+### Spiking Neural Networks (SNN)
 In addition to ROCKET and Arsenal, Spiking Neural Networks (SNNs) were developed using PyTorch and snntorch. SNNs are biologically inspired models designed to handle temporal data by processing information through discrete spikes, mimicking the behavior of neurons in the brain. This spike-based approach enables energy-efficient computation, making SNNs an attractive option for applications with power constraints, such as wearable devices or smartphones.
 
 The SNN models were trained on the pre-processed sensor data (accelerometer and gyroscope signals) to classify the six human activity types. The network architecture involved spike encoding techniques that converted the continuous sensor signals into spike trains, followed by layers designed to capture the temporal relationships in the data. The event-driven nature of SNNs allowed for efficient processing of the time series data, further reducing computational overhead.
